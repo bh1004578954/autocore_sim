@@ -940,10 +940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40c5efa74e592b49af5233ba2f62a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_transform: {fileID: 0}
   elementButton: {fileID: 0}
   logicObject: {fileID: 0}
   offsetLogic: {x: 0, y: 1.6, z: 0}
-  v3Scale: {x: 0, y: 0, z: 0}
   model: 0
   speedObjTarget: 0
 --- !u!114 &900918494

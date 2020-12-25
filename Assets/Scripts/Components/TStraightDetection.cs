@@ -23,18 +23,20 @@
 using Assets.Scripts.simai;
 using UnityEngine;
 
-namespace Assets.Scripts
+public class TStraightDetection : MonoBehaviour
 {
-
-    public class StopLine : MonoBehaviour
+    public ITrafficLight tlc;
+    private void Start()
     {
-        private void OnTriggerExit(Collider other)
+        if (tlc == null)
+            tlc = GetComponentInParent<ITrafficLight>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        var objAICar = other.GetComponentInParent<ObjNPC>();
+        if (objAICar != null)
         {
-            var testCar = other.GetComponentInParent<EgoVehicleObj>();
-            if (testCar != null) testCar.CurrentTL = null;
-            var objAICar = other.GetComponentInParent<NPCObj>();
-            if (objAICar != null) objAICar.currentTL = null;
+            objAICar.currentTL = tlc;
         }
     }
 }
-

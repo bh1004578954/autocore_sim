@@ -35,7 +35,7 @@ namespace Assets.Scripts
             if (other.transform.root.Equals(target))
             {
                 //target.GetComponent<TwistCmdSubscriber>().enabled = false;
-                target.GetComponent<EgoVehicle>().aimSpeed = target_speed_m_p_s;
+                target.GetComponent<EgoVehicleController>().aimSpeed = target_speed_m_p_s;
             }
         }
         private void OnTriggerExit(Collider other)
@@ -43,7 +43,7 @@ namespace Assets.Scripts
             if (other.transform.root.Equals(target))
             {
                 //target.GetComponent<TwistCmdSubscriber>().enabled = true;
-                target.GetComponent<EgoVehicle>().aimSpeed = 0;
+                target.GetComponent<EgoVehicleController>().aimSpeed = 0;
             }
         }
     }
